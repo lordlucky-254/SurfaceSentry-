@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  surfacesentry:
+    build: .
+    volumes:
+      - ./data:/app/data
+    environment:
+      - PYTHONUNBUFFERED=1
+    command: ["scan", "example.com", "--passive"]
